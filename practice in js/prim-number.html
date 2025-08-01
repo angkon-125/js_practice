@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var isprime = function(num){
+    if(num<=1)
+    return false;
+   for(var i =2;i<=Math.sqrt(num); i++)
+   if(i%num==0){
+    return false;
+   }
+   
+}
+
+var primeNumbers = []
+for(var i =2;i<=100;i++){
+    if(isprime(i)){
+        primeNumbers.push(i);
+    }
+}
+console.log(primeNumbers)
+    </script>
+</body>
+</html>

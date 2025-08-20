@@ -360,30 +360,46 @@
 //     if (found) break;
 // }
 
-var a = [
-    [1,2,3],
-    [4,5,6],
-]
+// var a = [
+//     [1,2,3],
+//     [4,5,6],
+// ]
 
-var b = [
-    [7,8,9],
-    [1,2,3]
-];
+// var b = [
+//     [7,8,9],
+//     [1,2,3]
+// ];
 
-var result = [];
+// var result = [];
 
-for( var i = 0; i < a.length; i++) {
-    var row = [];
-    for(var j = 0; j < a[i].length; j++) {
-        row.push(a[i][j] + b[i][j]);
-        var sum = 0 ;
+// for( var i = 0; i < a.length; i++) {
+//     var row = [];
+//     for(var j = 0; j < a[i].length; j++) {
+//         row.push(a[i][j] + b[i][j]);
+//         var sum = 0 ;
+//     }
+//     result.push(row);
+// }
+
+// console.log('Resultant Array:', result);
+// console.log('Sum of all elements:', result.flat().reduce((acc, val) => acc + val, 0));
+
+var arr = [1,2,3,4,5,6,7,8,9,10];
+
+var evenArr = [];
+var oddArr = [];
+
+for (var i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+        evenArr.push(arr[i]);
     }
-    result.push(row);
+    else {
+        oddArr.push(arr[i]);
+    }
 }
 
-console.log('Resultant Array:', result);
-console.log('Sum of all elements:', result.flat().reduce((acc, val) => acc + val, 0));
-
+console.log("Even numbers:", evenArr);
+console.log("Odd numbers:", oddArr);
 
 
 

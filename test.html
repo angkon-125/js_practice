@@ -2,53 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Call Your Ex (Dramatic)</title>
-  <style>
-    body {
-      background: #111;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      padding-top: 50px;
-    }
-    button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: crimson;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 30px;
-      box-shadow: 0 0 15px red;
-    }
-    .output {
-      margin-top: 30px;
-      font-size: 22px;
-      line-height: 1.6;
-    }
-  </style>
+
 </head>
 <body>
-
-<h1>💔 Should I Call Her?</h1>
-<button onclick="callRandomEx()">Spin the Wheel of Fate 🎲</button>
-<div class="output" id="result"></div>
-
-<script>
-  let exGirlfriends = ["Raya 💔", "Ochin 🧊", "Winsy 🔥"];
-
-  function callRandomEx() {
-    const result = document.getElementById("result");
-    result.innerHTML = "💭 Memories flooding back... Should I really call her?<br>🎲 Spinning the wheel of fate...";
-
-    setTimeout(() => {
-      let randomIndex = Math.floor(Math.random() * exGirlfriends.length);
-      let chosenEx = exGirlfriends[randomIndex];
-      result.innerHTML += `<br><br>📞 Dialing <strong>${chosenEx}</strong>...<br>🔮 Destiny has chosen. Let's see what unfolds...`;
-    }, 2500);
-  }
-</script>
-
+  <script src="test.js"></script>
 </body>
 </html>

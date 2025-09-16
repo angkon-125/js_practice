@@ -1,10 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-
+    <title>Student Info Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            margin: 0;
+        }
+        form {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 8px 12px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
-  <script src="test.js"></script>
+    <h1>Student Info Cards</h1>
+
+    <!-- Step 1: Create Form -->
+    <form id="studentForm">
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <input type="number" id="age" placeholder="Enter Age" required>
+        <input type="text" id="subject" placeholder="Enter Subject" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <!-- Where cards will appear -->
+    <div id="studentCards"></div>
+
+    <script>
+        // Step 2: Initial Students Array
+        var students = [
+            { name: "Armaan", age: 25, subject: "Computer Science" },
+            { name: "Abbir", age: 23, subject: "Mathematics" },
+            { name: "Arean", age: 26, subject: "Physics" },
+            { name: "Rakib", age: 22, subject: "Chemistry" }
+        ];
+
+        var container = document.getElementById("studentCards");
+
+        // Step 3: Function to display cards
+        function displayStudents() {
+            container.innerHTML = ""; // clear old cards
+            students.forEach(function(student) {
+                var card = document.createElement("div");
+                card.className = "card";
+                card.innerHTML = `
+                    <h2>${student.name}</h2>
+                    <p>Age: ${student.age}</p>
+                    <p>Subject: ${student.subject}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Step 4: Display initial cards
+        displayStudents();
+
+        // Step 5: Handle form submission
+        var form = document.getElementById("studentForm");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // stop page reload
+
+            // Get values from inputs
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var subject = document.getElementById("subject").value;
+
+            // Add new student object
+            students.push({ name: name, age: age, subject: subject });
+
+            // Refresh card display
+            displayStudents();
+
+            // Reset form
+            form.reset();
+        });
+    </script>
 </body>
 </html>
+
+<script src="10 array/script.js"></script>
